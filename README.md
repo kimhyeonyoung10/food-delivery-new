@@ -33,12 +33,77 @@
 ![image](https://user-images.githubusercontent.com/81146708/203248820-6fa851b3-a8f4-40f6-86cd-61029c14d4cb.png)
 
 ### CQRS
+```java
+// 주문이 들어오면 주문리스트 대시보드(View) Repo에 INSERT 
+@StreamListener(KafkaProcessor.INPUT)
+public void whenOrderPlaced_then_CREATE_1(
+    @Payload OrderPlaced orderPlaced
+) {
+    try {
+        if (!orderPlaced.validate()) return;
 
+        // view 객체 생성
+        OrderList orderList = new OrderList();
+        // view 객체에 이벤트의 Value 를 set 함
+        orderList.setOrderId(orderPlaced.getOrderId());
+        // view 레파지 토리에 save
+        orderListRepository.save(orderList);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+```
 ### Compensation / Correlation
+```java
+@StreamListener(value = KafkaProcessor.INPUT, condition = "headers['type']=='OrderCancelled'")
+    public void wheneverOrderCancelled_IncreaseFood(@Payload OrderCancelled orderCancelled) {
+        OrderCancelled event = orderCancelled;
+        Food.increaseFood(event);
+    }
+    
+    
+    public static void increaseFood(OrderCancelled orderCancelled) {
+        FoodRepository().findById(Long.valueOf(orderCancelled.getFoodId())).ifPresent(stock->{
+            Food.setFood(stock.getFood()++);
+            FoodRepository().save(Food);
+        });
+    }
+```
 
 ### Request / Response
 
+```java
+@PostPersist
+    public void onPostPersist(){
+
+
+        Delivered delivered = new Delivered(this);
+        delivered.publishAfterCommit();
+
+
+
+        DeliveryStarted deliveryStarted = new DeliveryStarted(this);
+        deliveryStarted.publishAfterCommit();
+
+    }
+
+    public static DeliveryRepository repository(){
+        DeliveryRepository deliveryRepository = DeliveryApplication.applicationContext.getBean(DeliveryRepository.class);
+        return deliveryRepository;
+    }
+```
 ### Circuit Breaker
+```java
+server:
+ port: 8080
+feign:
+ hystrix:
+  enabled: true
+ hystrix:
+  command:
+   default:
+    execution.isolation.thread.timeoutInmilliseconds: 1000
+```
 
 ### Gateway
 ![image](https://user-images.githubusercontent.com/81146708/203252135-144b05fc-d8f1-4b4c-a661-a37cd36d0dc0.png)
