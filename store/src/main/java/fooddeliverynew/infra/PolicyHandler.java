@@ -50,7 +50,7 @@ public class PolicyHandler{
         
 
         // Sample Logic //
-
+        StoreOrder.notifyOrderCanceled(event);
         
 
     }

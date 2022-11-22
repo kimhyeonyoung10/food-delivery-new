@@ -52,15 +52,15 @@ public class NotificationLog  {
         */
 
         /** Example 2:  finding and process
-        
-        repository().findById(accepted.get???()).ifPresent(notificationLog->{
+        */
+        repository().findById(accepted.getId()).ifPresent(notificationLog->{
             
-            notificationLog // do something
+            notificationLog.message = "food accepted"; // do something
             repository().save(notificationLog);
 
 
          });
-        */
+        
 
         
     }
@@ -73,15 +73,15 @@ public class NotificationLog  {
         */
 
         /** Example 2:  finding and process
-        
-        repository().findById(rejected.get???()).ifPresent(notificationLog->{
+        */
+        repository().findById(rejected.getId()).ifPresent(notificationLog->{
             
-            notificationLog // do something
+            notificationLog.message = "food rejected"; // do something
             repository().save(notificationLog);
 
 
          });
-        */
+        
 
         
     }
@@ -94,15 +94,15 @@ public class NotificationLog  {
         */
 
         /** Example 2:  finding and process
-        
-        repository().findById(cooked.get???()).ifPresent(notificationLog->{
+        */
+        repository().findById(cooked.getId()).ifPresent(notificationLog->{
             
-            notificationLog // do something
+            notificationLog.message = "food cook started"; // do something
             repository().save(notificationLog);
 
 
          });
-        */
+        
 
         
     }
@@ -115,15 +115,15 @@ public class NotificationLog  {
         */
 
         /** Example 2:  finding and process
-        
-        repository().findById(paid.get???()).ifPresent(notificationLog->{
+        */
+        repository().findById(paid.getId()).ifPresent(notificationLog->{
             
-            notificationLog // do something
+            notificationLog.message = "paid"; // do something
             repository().save(notificationLog);
 
 
          });
-        */
+        
 
         
     }
@@ -136,15 +136,15 @@ public class NotificationLog  {
         */
 
         /** Example 2:  finding and process
-        
-        repository().findById(orderPlaced.get???()).ifPresent(notificationLog->{
+        */
+        repository().findById(orderPlaced.getId()).ifPresent(notificationLog->{
             
-            notificationLog // do something
+            notificationLog.message = "orderPlaced"; // do something
             repository().save(notificationLog);
 
 
          });
-        */
+        
 
         
     }
@@ -157,15 +157,15 @@ public class NotificationLog  {
         */
 
         /** Example 2:  finding and process
-        
-        repository().findById(deliveryStarted.get???()).ifPresent(notificationLog->{
+        */
+        repository().findById(deliveryStarted.getId()).ifPresent(notificationLog->{
             
-            notificationLog // do something
+            notificationLog.message = "deliveryStarted"; // do something
             repository().save(notificationLog);
 
 
          });
-        */
+        
 
         
     }
@@ -178,15 +178,16 @@ public class NotificationLog  {
         */
 
         /** Example 2:  finding and process
-        
-        repository().findById(publishedCoupon.get???()).ifPresent(notificationLog->{
+        */
+        repository().findById(publishedCoupon.getId()).ifPresent(notificationLog->{
             
-            notificationLog // do something
+            notificationLog.message = "publishedCoupon";  // do something
+
             repository().save(notificationLog);
 
 
          });
-        */
+        
 
         
     }

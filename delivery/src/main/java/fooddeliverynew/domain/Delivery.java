@@ -62,20 +62,21 @@ public class Delivery  {
 
         /** Example 1:  new item 
         Delivery delivery = new Delivery();
+        delivery.setOrderId(orderPlaced.getId());
         repository().save(delivery);
-
-        */
+*/
+        
 
         /** Example 2:  finding and process
-        
-        repository().findById(cooked.get???()).ifPresent(delivery->{
+        */
+        repository().findById(cooked.getId()).ifPresent(delivery->{
             
-            delivery // do something
+            delivery.setOrderId = cooked.getOrderId();// do something
             repository().save(delivery);
 
 
          });
-        */
+        
 
         
     }

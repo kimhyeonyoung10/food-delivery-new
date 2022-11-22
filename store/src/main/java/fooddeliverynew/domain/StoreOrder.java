@@ -114,15 +114,36 @@ public class StoreOrder  {
         */
 
         /** Example 2:  finding and process
-        
-        repository().findById(paid.get???()).ifPresent(storeOrder->{
+        */
+        repository().findById(paid.getId()).ifPresent(storeOrder->{
             
-            storeOrder // do something
+            storeOrder.status = "add"; // do something
             repository().save(storeOrder);
 
 
          });
-        */
+        
+         public static void notifyOrderCanceled(OrderCanceled orderCanceled){
+
+            /** Example 1:  new item 
+            StoreOrder storeOrder = new StoreOrder();
+            repository().save(storeOrder);
+    
+            */
+    
+            /** Example 2:  finding and process
+            */
+            repository().findById(orderCanceled.getId()).ifPresent(storeOrder->{
+                
+                storeOrder.status = "canceled"; // do something
+                repository().save(storeOrder);
+    
+    
+             });
+            
+    
+            
+        }
 
         
     }
