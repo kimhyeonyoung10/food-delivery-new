@@ -20,9 +20,26 @@
 
 추가된 기능 2가지 \
 -> 고객이 주문을 완료 시 쿠폰을 카카오톡을 통해 발행해준다.\
---> 상점주는 주문수락때와 거절 시점에 시스템에 상태를 입력한다.
+![image](https://user-images.githubusercontent.com/81146708/203247781-80fecb79-5810-4920-9dbc-47903c945f42.png)\
+--> 상점주는 주문수락때와 거절 시점에 시스템에 상태를 입력한다.\
+![image](https://user-images.githubusercontent.com/81146708/203248300-c69c29fb-0485-44bf-9e7e-c10feae83f13.png)
 
 ## checkPoint
 
 ### Saga
+가게에서 주문을 수락했을때 주문상태를 변경해준다.
+
+![image](https://user-images.githubusercontent.com/81146708/203248736-81d72384-9b5a-4e39-bc19-dc857b6d88c9.png)
+![image](https://user-images.githubusercontent.com/81146708/203248820-6fa851b3-a8f4-40f6-86cd-61029c14d4cb.png)
+
+### CQRS
+
+### Compensation / Correlation
+
+### Request / Response
+
+### Circuit Breaker
+
+### Gateway
+![image](https://user-images.githubusercontent.com/81146708/203252135-144b05fc-d8f1-4b4c-a661-a37cd36d0dc0.png)
 
