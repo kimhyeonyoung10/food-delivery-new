@@ -1,126 +1,110 @@
 package fooddeliverynew.infra;
 
-import javax.naming.NameParser;
-
-import javax.naming.NameParser;
-import javax.transaction.Transactional;
-
-import fooddeliverynew.config.kafka.KafkaProcessor;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import fooddeliverynew.config.kafka.KafkaProcessor;
+import fooddeliverynew.domain.*;
+import javax.naming.NameParser;
+import javax.naming.NameParser;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
-import fooddeliverynew.domain.*;
-
 
 @Service
 @Transactional
-public class PolicyHandler{
-    @Autowired OrderRepository orderRepository;
-    @Autowired PaymentRepository paymentRepository;
-    
+public class PolicyHandler {
+
+    @Autowired
+    OrderRepository orderRepository;
+
+    @Autowired
+    PaymentRepository paymentRepository;
+
     @StreamListener(KafkaProcessor.INPUT)
-    public void whatever(@Payload String eventString){}
+    public void whatever(@Payload String eventString) {}
 
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Rejected'")
-    public void wheneverRejected_CancelPayment(@Payload Rejected rejected){
-
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='Rejected'"
+    )
+    public void wheneverRejected_CancelPayment(@Payload Rejected rejected) {
         Rejected event = rejected;
-        System.out.println("\n\n##### listener CancelPayment : " + rejected + "\n\n");
-
-
-        
+        System.out.println(
+            "\n\n##### listener CancelPayment : " + rejected + "\n\n"
+        );
 
         // Sample Logic //
         Payment.cancelPayment(event);
-        
-
-        
-
     }
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='OrderCanceled'")
-    public void wheneverOrderCanceled_CancelPayment(@Payload OrderCanceled orderCanceled){
 
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='OrderCanceled'"
+    )
+    public void wheneverOrderCanceled_CancelPayment(
+        @Payload OrderCanceled orderCanceled
+    ) {
         OrderCanceled event = orderCanceled;
-        System.out.println("\n\n##### listener CancelPayment : " + orderCanceled + "\n\n");
-
-
-        
+        System.out.println(
+            "\n\n##### listener CancelPayment : " + orderCanceled + "\n\n"
+        );
 
         // Sample Logic //
         Payment.cancelPayment(event);
-        
-
-        
-
     }
 
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Rejected'")
-    public void wheneverRejected_Cancel(@Payload Rejected rejected){
-
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='Rejected'"
+    )
+    public void wheneverRejected_Cancel(@Payload Rejected rejected) {
         Rejected event = rejected;
         System.out.println("\n\n##### listener Cancel : " + rejected + "\n\n");
-
-
-        
-
         // Sample Logic //
-
-        
 
     }
 
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Accepted'")
-    public void wheneverAccepted_UpdateStatus(@Payload Accepted accepted){
-
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='Accepted'"
+    )
+    public void wheneverAccepted_UpdateStatus(@Payload Accepted accepted) {
         Accepted event = accepted;
-        System.out.println("\n\n##### listener UpdateStatus : " + accepted + "\n\n");
-
-
-        
+        System.out.println(
+            "\n\n##### listener UpdateStatus : " + accepted + "\n\n"
+        );
 
         // Sample Logic //
         Order.updateStatus(event);
-        
-
-        
-
     }
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Rejected'")
-    public void wheneverRejected_UpdateStatus(@Payload Rejected rejected){
 
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='Rejected'"
+    )
+    public void wheneverRejected_UpdateStatus(@Payload Rejected rejected) {
         Rejected event = rejected;
-        System.out.println("\n\n##### listener UpdateStatus : " + rejected + "\n\n");
-
-
-        
+        System.out.println(
+            "\n\n##### listener UpdateStatus : " + rejected + "\n\n"
+        );
 
         // Sample Logic //
         Order.updateStatus(event);
-        
-
-        
-
     }
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Started'")
-    public void wheneverStarted_UpdateStatus(@Payload Started started){
 
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='Started'"
+    )
+    public void wheneverStarted_UpdateStatus(@Payload Started started) {
         Started event = started;
-        System.out.println("\n\n##### listener UpdateStatus : " + started + "\n\n");
-
-
-        
+        System.out.println(
+            "\n\n##### listener UpdateStatus : " + started + "\n\n"
+        );
 
         // Sample Logic //
         Order.updateStatus(event);
-        
-
-        
-
     }
-
 }
-
-

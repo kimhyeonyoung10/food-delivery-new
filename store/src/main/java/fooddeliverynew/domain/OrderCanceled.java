@@ -2,8 +2,9 @@ package fooddeliverynew.domain;
 
 import fooddeliverynew.domain.*;
 import fooddeliverynew.infra.AbstractEvent;
-import lombok.*;
 import java.util.*;
+import lombok.*;
+
 @Data
 @ToString
 public class OrderCanceled extends AbstractEvent {
@@ -13,5 +14,3 @@ public class OrderCanceled extends AbstractEvent {
     private String customerId;
     private String preference;
 }
-
-

@@ -15,10 +15,11 @@ public class Started extends AbstractEvent {
     private Long orderId;
     private String status;
 
-    public Started(StoreOrder aggregate){
+    public Started(StoreOrder aggregate) {
         super(aggregate);
     }
-    public Started(){
+
+    public Started() {
         super();
     }
 }

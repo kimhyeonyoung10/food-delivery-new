@@ -14,10 +14,11 @@ public class OrderPlaced extends AbstractEvent {
     private String customerId;
     private String preference;
 
-    public OrderPlaced(Order aggregate){
+    public OrderPlaced(Order aggregate) {
         super(aggregate);
     }
-    public OrderPlaced(){
+
+    public OrderPlaced() {
         super();
     }
 }

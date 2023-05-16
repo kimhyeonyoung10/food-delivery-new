@@ -11,10 +11,11 @@ public class Rejected extends AbstractEvent {
 
     private Long id;
 
-    public Rejected(StoreOrder aggregate){
+    public Rejected(StoreOrder aggregate) {
         super(aggregate);
     }
-    public Rejected(){
+
+    public Rejected() {
         super();
     }
 }

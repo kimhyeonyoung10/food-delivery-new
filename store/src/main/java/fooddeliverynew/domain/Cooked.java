@@ -15,10 +15,11 @@ public class Cooked extends AbstractEvent {
     private Long orderId;
     private String status;
 
-    public Cooked(StoreOrder aggregate){
+    public Cooked(StoreOrder aggregate) {
         super(aggregate);
     }
-    public Cooked(){
+
+    public Cooked() {
         super();
     }
 }

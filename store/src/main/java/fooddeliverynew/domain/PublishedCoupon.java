@@ -13,10 +13,11 @@ public class PublishedCoupon extends AbstractEvent {
     private String foodId;
     private String orderId;
 
-    public PublishedCoupon(StoreOrder aggregate){
+    public PublishedCoupon(StoreOrder aggregate) {
         super(aggregate);
     }
-    public PublishedCoupon(){
+
+    public PublishedCoupon() {
         super();
     }
 }

@@ -36,7 +36,7 @@
                     @click="save"
                     v-else
             >
-                Save
+                Pay
             </v-btn>
             <v-btn
                     color="deep-purple lighten-2"

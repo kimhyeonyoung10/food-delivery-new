@@ -15,10 +15,11 @@ public class Accepted extends AbstractEvent {
     private Long orderId;
     private String status;
 
-    public Accepted(StoreOrder aggregate){
+    public Accepted(StoreOrder aggregate) {
         super(aggregate);
     }
-    public Accepted(){
+
+    public Accepted() {
         super();
     }
 }

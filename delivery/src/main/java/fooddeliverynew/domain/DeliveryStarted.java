@@ -13,10 +13,11 @@ public class DeliveryStarted extends AbstractEvent {
     private String address;
     private Long orderId;
 
-    public DeliveryStarted(Delivery aggregate){
+    public DeliveryStarted(Delivery aggregate) {
         super(aggregate);
     }
-    public DeliveryStarted(){
+
+    public DeliveryStarted() {
         super();
     }
 }

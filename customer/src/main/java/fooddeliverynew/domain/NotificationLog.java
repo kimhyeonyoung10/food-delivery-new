@@ -1,50 +1,32 @@
 package fooddeliverynew.domain;
 
 import fooddeliverynew.CustomerApplication;
-import javax.persistence.*;
-import java.util.List;
-import lombok.Data;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.*;
+import lombok.Data;
 
 @Entity
-@Table(name="NotificationLog_table")
+@Table(name = "NotificationLog_table")
 @Data
+public class NotificationLog {
 
-public class NotificationLog  {
-
-    
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    
-    
-    
-    
-    
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    
-    
-    
-    
+
     private String customerId;
-    
-    
-    
-    
-    
+
     private String message;
 
-
-    public static NotificationLogRepository repository(){
-        NotificationLogRepository notificationLogRepository = CustomerApplication.applicationContext.getBean(NotificationLogRepository.class);
+    public static NotificationLogRepository repository() {
+        NotificationLogRepository notificationLogRepository = CustomerApplication.applicationContext.getBean(
+            NotificationLogRepository.class
+        );
         return notificationLogRepository;
     }
 
-
-
-
-    public static void alertViaKakao(Accepted accepted){
-
+    public static void alertViaKakao(Accepted accepted) {
         /** Example 1:  new item 
         NotificationLog notificationLog = new NotificationLog();
         repository().save(notificationLog);
@@ -62,10 +44,9 @@ public class NotificationLog  {
          });
         */
 
-        
     }
-    public static void alertViaKakao(Rejected rejected){
 
+    public static void alertViaKakao(Rejected rejected) {
         /** Example 1:  new item 
         NotificationLog notificationLog = new NotificationLog();
         repository().save(notificationLog);
@@ -83,10 +64,9 @@ public class NotificationLog  {
          });
         */
 
-        
     }
-    public static void alertViaKakao(Cooked cooked){
 
+    public static void alertViaKakao(Cooked cooked) {
         /** Example 1:  new item 
         NotificationLog notificationLog = new NotificationLog();
         repository().save(notificationLog);
@@ -104,10 +84,9 @@ public class NotificationLog  {
          });
         */
 
-        
     }
-    public static void alertViaKakao(Paid paid){
 
+    public static void alertViaKakao(Paid paid) {
         /** Example 1:  new item 
         NotificationLog notificationLog = new NotificationLog();
         repository().save(notificationLog);
@@ -125,10 +104,9 @@ public class NotificationLog  {
          });
         */
 
-        
     }
-    public static void alertViaKakao(OrderPlaced orderPlaced){
 
+    public static void alertViaKakao(OrderPlaced orderPlaced) {
         /** Example 1:  new item 
         NotificationLog notificationLog = new NotificationLog();
         repository().save(notificationLog);
@@ -146,10 +124,9 @@ public class NotificationLog  {
          });
         */
 
-        
     }
-    public static void alertViaKakao(DeliveryStarted deliveryStarted){
 
+    public static void alertViaKakao(DeliveryStarted deliveryStarted) {
         /** Example 1:  new item 
         NotificationLog notificationLog = new NotificationLog();
         repository().save(notificationLog);
@@ -167,10 +144,9 @@ public class NotificationLog  {
          });
         */
 
-        
     }
-    public static void alertViaKakao(PublishedCoupon publishedCoupon){
 
+    public static void alertViaKakao(PublishedCoupon publishedCoupon) {
         /** Example 1:  new item 
         NotificationLog notificationLog = new NotificationLog();
         repository().save(notificationLog);
@@ -188,8 +164,5 @@ public class NotificationLog  {
          });
         */
 
-        
     }
-
-
 }

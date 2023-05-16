@@ -1,11 +1,9 @@
 package fooddeliverynew.external;
 
-import javax.persistence.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.*;
 import lombok.Data;
 
 @Data
-public class PayCommand {
-
-}
+public class PayCommand {}

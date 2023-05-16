@@ -1,10 +1,12 @@
 package fooddeliverynew.domain;
 
+import fooddeliverynew.domain.*;
 import fooddeliverynew.infra.AbstractEvent;
-import lombok.Data;
 import java.util.*;
+import lombok.*;
 
 @Data
+@ToString
 public class Accepted extends AbstractEvent {
 
     private Long id;

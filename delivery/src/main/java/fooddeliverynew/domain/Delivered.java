@@ -11,10 +11,11 @@ public class Delivered extends AbstractEvent {
 
     private Long id;
 
-    public Delivered(Delivery aggregate){
+    public Delivered(Delivery aggregate) {
         super(aggregate);
     }
-    public Delivered(){
+
+    public Delivered() {
         super();
     }
 }
