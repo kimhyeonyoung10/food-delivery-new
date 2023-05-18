@@ -8,4 +8,5 @@ https://gitpod.io/new/#/https://github.com/kimhyeonyoung10/food-delivery-new
 
 ## Saga (Pub / Sub) 확인 - 클러스터에 Kafka 설치 후
 
- 
+## Service Router 설치
+![image](https://github.com/kimhyeonyoung10/food-delivery-new/assets/81146708/10f08510-3a82-4590-9a3c-6478127f5a34)
