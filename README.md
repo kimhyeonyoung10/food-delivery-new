@@ -18,3 +18,8 @@ gitpod에서 확인한 정보
 ![image](https://github.com/kimhyeonyoung10/food-delivery-new/assets/81146708/9d4abbe7-28ee-40e4-b742-82363fe7cc75)
 
 ## Zero downtime Deployment
+
+
+store - kubernetes - deployment.yaml 에서 설정함
+
+
