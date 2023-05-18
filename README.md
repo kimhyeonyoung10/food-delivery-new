@@ -23,3 +23,5 @@ gitpod에서 확인한 정보
 store - kubernetes - deployment.yaml 에서 설정함
 
 
+![image](https://github.com/kimhyeonyoung10/food-delivery-new/assets/81146708/7b53a4b9-3a90-4c4c-a71d-4565901a3975)
+
