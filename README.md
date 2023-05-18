@@ -10,3 +10,11 @@ https://gitpod.io/new/#/https://github.com/kimhyeonyoung10/food-delivery-new
 
 ## Service Router 설치
 ![image](https://github.com/kimhyeonyoung10/food-delivery-new/assets/81146708/10f08510-3a82-4590-9a3c-6478127f5a34)
+
+
+gitpod에서 확인한 정보
+
+
+![image](https://github.com/kimhyeonyoung10/food-delivery-new/assets/81146708/9d4abbe7-28ee-40e4-b742-82363fe7cc75)
+
+## Zero downtime Deployment
